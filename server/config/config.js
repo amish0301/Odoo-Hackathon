@@ -1,12 +1,10 @@
 import path from "path";
 import dotenv from "dotenv";
-import { fileURLToPath } from "url";
+dotenv.config({path : path.resolve("__dirname", "..", ".env")});
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const config = {
+  port: process.env.SERVER_PORT || 5000,
+  dbUri: process.env.DB_URI,
+};
 
-export function setUpEnvironmentVariables() {
-    if (process.env.NODE_ENV !== "production") {
-        dotenv.config({ path: path.resolve(__dirname, "..", ".env") });
-    }
-}
+export default config;
