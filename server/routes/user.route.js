@@ -2,7 +2,7 @@ import express from "express";
 import { myInfo } from "../controller/user.controller.js";
 const router = express.Router();
 
-router.post('/signup', )
+router.post('/signup', register);
 
 router.get('/my-info', myInfo);
 

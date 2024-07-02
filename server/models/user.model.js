@@ -6,6 +6,7 @@ const userSchema = new mongoose.Schema(
     username: {
       type: String,
       required: true,
+      unique: true,
     },
     password: {
       type: String,
@@ -17,7 +18,7 @@ const userSchema = new mongoose.Schema(
     role: {
       type: String,
       enum: ["User", "Collector", "Admin"],
-      default: "user",
+      default: "User",
     },
     mobileNumber: {
       type: String,
