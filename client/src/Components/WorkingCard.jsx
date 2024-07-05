@@ -1,10 +1,12 @@
 import React from 'react'
 
-const WorkingCard = ({cnt, description}) => {
+const WorkingCard = ({ cnt, title, description, imgUrl }) => {
   return (
-    <div className='bg-white p-8 rounded-lg shadow-lg max-w-sm flex flex-col items-center'>
-        <div className='text-3xl font-bold text-green-700 rounded-full bg-green-200 p-3'>{cnt}</div>
-        <div className='text-wrap font-semibold'>{description}</div>
+    <div className='flex flex-col justify-evenly bg-transparent gap-2 w-full md:max-w-sm border-b-2 border-black md:border-none select-none'>
+      <div className='mb-3 text-3xl font-semibold p-3'>{cnt}</div>
+      <div className='text-xl font-medium ml-3'>{title}</div>
+      <div className='text-base md:text-lg text-balance p-3'>{description}</div>
+      <div className='mb-3 w-24 h-24'><img src={imgUrl} alt="work-img" className='w-full h-full object-cover md:scale-110' /></div>
     </div>
   )
 }

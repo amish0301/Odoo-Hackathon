@@ -21,10 +21,10 @@
 .dropdown {
     position: absolute;
     width: 120px;
-    right: 1.1rem;
+    right: 6.5rem;
     top: 4rem;
     background-color: white;
-    padding: 15px;
+    padding: 10px;
     border: 1px solid gray;
     border-radius: 15px;
     font-size: medium;

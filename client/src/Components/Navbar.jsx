@@ -31,7 +31,7 @@ const Navbar = () => {
   window.addEventListener("scroll", scrollHandler);
 
   return (
-    <nav className={`bg-gradient-to-r from-green-500 to-blue-600 justify-between items-center p-3 flex ${updateNavbar ? 'sticky top-0 shadow-xl' : ''}`}>
+    <nav className={`bg-gradient-to-r from-green-500 to-blue-600 justify-between items-center px-4 md:px-24 py-2 flex ${updateNavbar ? 'sticky top-0 z-30 shadow-xl' : ''}`}>
       <Link className='link-style items-center flex gap-2' to={'/'}>
         {/* <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="brand" className='w-12 object-cover' /> */}
         <span className='text-xl font-medium'>Odoo Hackathon</span>

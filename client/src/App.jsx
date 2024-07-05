@@ -1,9 +1,8 @@
 import React, { Suspense, lazy } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
-import ProtectRoutes from './utils/ProtectRoutes'
+import ProtectRoutes from './utils/ProtectRoutes.jsx';
 
-import Home from './Components/Home'
-// const Home = lazy(() => import('./Components/Home'))
+const Home = lazy(() => import('./Components/Home'))
 const About = lazy(() => import('./Pages/About'))
 const Contact = lazy(() => import('./Pages/Contact'))
 const SignIn = lazy(() => import('./Pages/SignIn'))

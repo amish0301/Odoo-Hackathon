@@ -1,5 +1,7 @@
 import { ApiError } from "../error/ErrorHandler.js";
 import { TryCatch } from "../utility/trycatch.js";
+import bcrypt from "bcryptjs";
+import sendToken from "../auth/jwt.js";
 import User from "../models/user.model.js";
 
 // Sign-Up
@@ -21,7 +23,7 @@ export const register = TryCatch(async (req, res, next) => {
   });
 
   // now create jwt token
-  sendToken(res,200, "User registered successfully", user);
+  sendToken(res, 200, "User registered successfully", user);
 });
 
 export const myInfo = TryCatch(async (req, res, next) => {
