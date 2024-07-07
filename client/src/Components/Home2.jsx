@@ -6,7 +6,7 @@ import garbageCollector from '../assets/garbage_collector.png'
 
 const Home2 = () => {
     return (
-        <div className='min-w-full bg-green-400 md:p-8 pt-5'>
+        <div className='min-w-full bg-backgroundLight dark:bg-accentDark md:p-8 pt-5'>
             <h2 className='text-2xl md:text-4xl font-bold text-left inline-block min-w-full pl-5'>Basically, it <span className='w-fit text-2xl md:text-4xl font-bold text-left'><br />works like this</span></h2>
             <div className='md:mt-5 w-full grid md:grid-cols-3 grid-flow-row gap-4 md:gap-8 p-5'>
                 <div className='relative'>

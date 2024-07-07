@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { IoMenuSharp as Menu, IoCloseSharp as Close } from "react-icons/io5";
 import DropDownProfile from './DropDownProfile';
+import ThemeToggle from './Theme/ThemeToggle';
 
 
 const Navbar = () => {
@@ -19,7 +20,6 @@ const Navbar = () => {
     setDropDownOpen(prev => !prev);
   }
 
-
   function scrollHandler() {
     if (window.scrollY >= 20) {
       setUpdateNavbar(true);
@@ -31,14 +31,14 @@ const Navbar = () => {
   window.addEventListener("scroll", scrollHandler);
 
   return (
-    <nav className={`bg-gradient-to-r from-green-500 to-blue-600 justify-between items-center px-4 md:px-24 py-2 flex ${updateNavbar ? 'sticky top-0 z-30 shadow-xl' : ''}`}>
+    <nav className={`bg-primary dark:bg-backgroundDark justify-between items-center px-4 md:px-24 py-2 flex ${updateNavbar ? 'sticky top-0 z-30 shadow-xl bg-transparent backdrop-blur' : ''}`}>
       <Link className='link-style items-center flex gap-2' to={'/'}>
         {/* <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="brand" className='w-12 object-cover' /> */}
         <span className='text-xl font-medium'>Odoo Hackathon</span>
       </Link>
 
       {/* nav-menu */}
-      <div className='hidden md:flex items-center justify- gap-8'>
+      <div className='hidden md:flex items-center justify-between gap-8'>
         <Link className='link-style hover:text-gray-500' to="/">Home</Link>
         <Link className='link-style hover:text-gray-500' to="/about">About</Link>
         <Link className='link-style hover:text-gray-500' to="/contact">Contact</Link>
@@ -51,18 +51,20 @@ const Navbar = () => {
 
       {
         user && (
-          <div className='hidden md:flex items-center w-10 p-2 mr-4 rounded-full bg-green-300 border-solid cursor-pointer' onClick={handleDropdown}>
-            <img src="https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png" alt="" className='w-full h-auto' />
-            {dropDownOpen && <DropDownProfile />}
+          <div className='hidden md:flex items-center justify-between'>
+            <div className='mr-4'><ThemeToggle /></div>
+            <div className='w-10 p-2 mr-4 rounded-full bg-green-300 border-solid cursor-pointer'>
+              <img src="https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png" alt="" onClick={handleDropdown} />
+              {dropDownOpen && <DropDownProfile />}
+            </div>
           </div>
         )
-
       }
-
 
       <button className='md:hidden p-2' onClick={handleMobile}>
         <Menu className='text-2xl' />
       </button>
+
       {/* for mobile nav */}
       <div className={`fixed bg-white inset-0 p-2 ${isOpen ? "" : "hidden "}`}>
         <div className='flex justify-between'>

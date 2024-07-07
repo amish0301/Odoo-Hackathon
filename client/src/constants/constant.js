@@ -1,7 +1,7 @@
 import facebook from "../assets/icons/facebook.png";
 import twitter from "../assets/icons/twitter.png";
 import instagram from "../assets/icons/instagram.png";
-import linkedin from "../assets/icons/linkedin_icon (1).png";
+import linkedin from "../assets/icons/linkedin.png";
 
 export const socialMedia = [
   { src: facebook, alt: "facebook logo", hreef: "https://www.facebook.com/" },
